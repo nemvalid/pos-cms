@@ -1,3 +1,5 @@
 .marketplace-kit
 .pos
+.vscode
+node_modules
 tmp/
