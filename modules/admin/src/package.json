@@ -1,0 +1,24 @@
+{
+  "name": "pos-cms",
+  "version": "0.1.0",
+  "private": true,
+  "source": "./index.tsx",
+  "targets": {
+    "default": {
+      "distDir": "../public/assets"
+    }
+  },
+  "scripts": {
+    "start": "parcel watch --host localhost",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "parcel": "^2.2.1"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
