@@ -1,5 +1,30 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { App } from './App';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-const app = document.getElementById('root');
-ReactDOM.render(<App />, app);
+import { store } from './store';
+
+import { NotFound } from './components/404';
+import Layout from './components/Layout';
+import { Dashboard } from './components/Pages/Dashboard';
+import { Content } from './components/Pages/Content';
+import { ContentForm } from './components/Pages/ContentForm';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter basename="admin">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="/content" element={<Content />} />
+            <Route path="/content/new/:modelName" element={<ContentForm />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
