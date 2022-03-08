@@ -1,6 +1,6 @@
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, Grid, Typography } from "@mui/material";
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { useGetEditableContentTypesQuery } from "../../store/services/contentType";
+import { useGetEditableContentTypesQuery } from '../../store/services/contentType';
 
 export const Content = () => {
   const contentTypes = useGetEditableContentTypesQuery();
@@ -30,5 +30,5 @@ export const Content = () => {
         ))}
       </Grid>
     </Box>
-  )
+  );
 };

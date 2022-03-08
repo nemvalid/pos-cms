@@ -9,37 +9,35 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Outlet, useRoutes} from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 
 import { Navigation } from './Navigation';
 
-const drawerWidth: number = 240;
+const drawerWidth = 240;
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
 }
 
 const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
+  shouldForwardProp: (prop) => prop !== 'open'
 })<AppBarProps>(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
+    duration: theme.transitions.duration.leavingScreen
   }),
   ...(open && {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
+      duration: theme.transitions.duration.enteringScreen
+    })
+  })
 }));
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -50,22 +48,22 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
       width: drawerWidth,
       transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
+        duration: theme.transitions.duration.enteringScreen
       }),
       boxSizing: 'border-box',
       ...(!open && {
         overflowX: 'hidden',
         transition: theme.transitions.create('width', {
           easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen,
+          duration: theme.transitions.duration.leavingScreen
         }),
         width: theme.spacing(7),
         [theme.breakpoints.up('sm')]: {
-          width: theme.spacing(9),
-        },
-      }),
-    },
-  }),
+          width: theme.spacing(9)
+        }
+      })
+    }
+  })
 );
 
 const mdTheme = createTheme();
@@ -83,7 +81,7 @@ export default function Layout() {
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px',
+              pr: '24px'
             }}
           >
             <IconButton
@@ -93,7 +91,7 @@ export default function Layout() {
               onClick={toggleDrawer}
               sx={{
                 marginRight: '36px',
-                ...(open && { display: 'none' }),
+                ...(open && { display: 'none' })
               }}
             >
               <MenuIcon />
@@ -120,7 +118,7 @@ export default function Layout() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'flex-end',
-              px: [1],
+              px: [1]
             }}
           >
             <IconButton onClick={toggleDrawer}>
@@ -138,7 +136,7 @@ export default function Layout() {
                 : theme.palette.grey[900],
             flexGrow: 1,
             height: '100vh',
-            overflow: 'auto',
+            overflow: 'auto'
           }}
         >
           <Toolbar />
