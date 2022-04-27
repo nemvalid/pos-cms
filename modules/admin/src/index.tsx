@@ -5,11 +5,11 @@ import { Provider } from 'react-redux';
 
 import { store } from './store';
 
-import { NotFound } from './components/404';
+import { NotFound } from './components/pages/404';
 import Layout from './components/Layout';
-import { Dashboard } from './components/Pages/Dashboard';
-import { Content } from './components/Pages/Content';
-import { ContentForm } from './components/Pages/ContentForm';
+import { Dashboard } from './components/pages/Dashboard';
+import { Content } from './components/pages/Content';
+import { ContentForm } from './components/pages/ContentForm';
 
 ReactDOM.render(
   <React.StrictMode>
