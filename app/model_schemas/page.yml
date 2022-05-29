@@ -1,0 +1,29 @@
+name: page
+metadata:
+  editable: true
+  type: "content"
+  validation:
+    title:
+      string:
+        required: "required"
+    body:
+      string:
+        required: "required"
+properties:
+  - name: id
+  - name: author_id
+  - name: title
+    type: string
+    metadata:
+      editable: true
+      widget: textfield
+  - name: body
+    type: text
+    metadata:
+      editable: true
+      widget: richtext
+  - name: status
+    # enum:
+    #   - published
+    #   - draft
+    #   - unpublished
