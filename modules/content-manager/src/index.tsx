@@ -14,7 +14,8 @@ import { ContentForm } from './components/pages/ContentForm';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename="admin">
+      <BrowserRouter basename="admin/content">
+
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />

@@ -4,7 +4,7 @@ import { ContentType, ContentTypeFields } from '../../types/content';
 // Define a service using a base URL and expected endpoints
 export const contentTypeApi = createApi({
   reducerPath: 'contentTypeApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://nemvalid-sandbox.staging.oregon.platform-os.com/admin/api/' }), // TODO
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://nemvalid-sandbox.staging.oregon.platform-os.com/admin/content/api/' }), // TODO
   endpoints: (builder) => ({
     getEditableContentTypes: builder.query<ContentType[], void>({
       query: () => 'getContentTypes.json'
