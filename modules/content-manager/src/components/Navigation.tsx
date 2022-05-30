@@ -13,18 +13,6 @@ export const Navigation = () => (
   <div>
     <ListItem button component={Link} to="/">
       <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItem>
-    <ListItem button component={Link} to="/users">
-      <ListItemIcon>
-        <PeopleIcon />
-      </ListItemIcon>
-      <ListItemText primary="Users" />
-    </ListItem>
-    <ListItem button component={Link} to="/content">
-      <ListItemIcon>
         <ArticleIcon />
       </ListItemIcon>
       <ListItemText primary="Content" />
@@ -34,18 +22,6 @@ export const Navigation = () => (
         <CategoryIcon />
       </ListItemIcon>
       <ListItemText primary="Taxonomies" />
-    </ListItem>
-    <ListItem button component={Link} to="/modules">
-      <ListItemIcon>
-        <ExtensionIcon />
-      </ListItemIcon>
-      <ListItemText primary="Modules" />
-    </ListItem>
-    <ListItem button component={Link} to="/integrations">
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary="Integrations" />
     </ListItem>
   </div>
 );
