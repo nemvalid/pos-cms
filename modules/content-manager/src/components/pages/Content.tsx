@@ -21,7 +21,7 @@ export const Content = () => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button component={Link} size="small" color="primary" to={`/content/new/${contentType.parameterized_name}`}>
+                <Button component={Link} size="small" color="primary" to={`/create/${contentType.parameterized_name}`}>
                   Add new
                 </Button>
               </CardActions>
