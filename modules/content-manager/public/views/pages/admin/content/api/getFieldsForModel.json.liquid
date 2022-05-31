@@ -3,6 +3,6 @@ method: get
 ---
 {% liquid
   assign model = context.params.model
-  graphql result = 'modules/admin/getFieldsForModel', content_type: model
+  graphql result = 'modules/content-manager/getFieldsForModel', content_type: model
 %}
 {{ result.admin_model_schemas.results.first | json }}

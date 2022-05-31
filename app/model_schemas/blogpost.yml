@@ -10,20 +10,24 @@ metadata:
       string:
         required: "required"
 properties:
-  - name: id
   - name: author_id
   - name: title
     type: string
     metadata:
+      weight: 1
       editable: true
       widget: textfield
   - name: body
     type: text
     metadata:
+      weight: 2
       editable: true
       widget: richtext
   - name: status
-    # enum:
-    #   - published
-    #   - draft
-    #   - unpublished
+    metadata:
+      weight: 3
+      editable: true
+      widget: select
+      options:
+        - published
+        - unpublished
