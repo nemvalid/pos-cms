@@ -11,10 +11,16 @@ export const contentTypeApi = createApi({
     }),
     getEditableFieldsForContentType: builder.query<ContentTypeFields, string>({
       query: (model) => `getFieldsForModel.json?model=${model}`
+    }),
+    getContentByType: builder.query<[], string>({
+      query: (model) => `getContentByModel.json?model=${model}`
+    }),
+    getContentById: builder.query<any, string | undefined>({
+      query: (id) => `getContentById.json?id=${id}`
     })
   })
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetEditableContentTypesQuery, useGetEditableFieldsForContentTypeQuery } = contentTypeApi;
+export const { useGetEditableContentTypesQuery, useGetEditableFieldsForContentTypeQuery, useGetContentByTypeQuery, useGetContentByIdQuery } = contentTypeApi;

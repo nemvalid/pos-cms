@@ -1,11 +1,18 @@
 import React from 'react';
+import { TextFieldWidget } from './TextField';
+import { RichTextWidget } from './RichText';
+import { SelectWidget } from './Select';
+import { CheckboxWidget } from './Checkbox';
 
 export type WidgetFormFieldProps = {
+  id: string
   label: string
   value: unknown
-  onChange: (value: unknown) => unknown
-  error: boolean
-  helptext: string
+  error?: string
+  helptext?: string
+  // select props
+  selectOptions?: string[]
+  multiple?: boolean
 };
 
 export type WidgetPresentationalFieldProps = {
@@ -57,3 +64,8 @@ export const widgetRegistry: RegistryService = {
     return registry[widgetName].presentationalField;
   }
 };
+
+widgetRegistry.register(TextFieldWidget);
+widgetRegistry.register(RichTextWidget);
+widgetRegistry.register(SelectWidget);
+widgetRegistry.register(CheckboxWidget);

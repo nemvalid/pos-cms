@@ -6,7 +6,10 @@ export type ContentType = {
 
 export type ContentTypeFieldMetaData = {
   widget: string,
-  editable: boolean
+  weight?: number,
+  editable: boolean,
+  multiple?: boolean,
+  options?: string[]
 };
 
 export type ContentTypeField = {

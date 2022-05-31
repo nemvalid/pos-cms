@@ -8,7 +8,7 @@ import { store } from './store';
 import { NotFound } from './components/pages/404';
 import Layout from './components/Layout';
 import { Dashboard } from './components/pages/Dashboard';
-import { Content } from './components/pages/Content';
+import { ContentList } from './components/pages/Content';
 import { ContentForm } from './components/pages/ContentForm';
 
 ReactDOM.render(
@@ -19,8 +19,9 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
-            <Route path="/list/:modelName" element={<Content />} />
-            <Route path="/create/:modelName" element={<ContentForm />} />
+            <Route path="/list/:modelName" element={<ContentList />} />
+            <Route path="/new/:modelName" element={<ContentForm />} />
+            <Route path="/edit/:modelName/:id" element={<ContentForm edit/>} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
